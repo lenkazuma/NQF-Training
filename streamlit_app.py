@@ -1,6 +1,5 @@
 from dotenv import load_dotenv
 import streamlit as st
-import time
 from PyPDF2 import PdfReader
 from langchain.text_splitter import CharacterTextSplitter
 from langchain.text_splitter import RecursiveCharacterTextSplitter
@@ -44,10 +43,6 @@ def main():
         st.session_state.summary = None
         
     st.session_state.file_name = pdf_search[0]
-    
-    # Use the YoutubeLoader to load and parse the transcript of a YouTube video
-    #loader = YoutubeLoader.from_youtube_url("https://www.youtube.com/watch?v=O5nskjZ_GoI", add_video_info=True)
-    #video = loader.load()
 
     # Handle PDF files
     text = get_pdf_text(pdf_search)
@@ -87,9 +82,8 @@ def main():
 
 
             # show user input
-    user_question = st.text_input("Ask a question about this document : ")      
+    user_question = st.text_input("以下是一个对提供的财务文件的问题, 请引用具体数字和说明，并尽可能的简短回答。:  ")      
     if user_question:
-        #user_question +="? 用中文回答。"
         docs = knowledge_base.similarity_search(user_question)
         with st.spinner('Wait for it...'):
             with get_openai_callback() as cb:
