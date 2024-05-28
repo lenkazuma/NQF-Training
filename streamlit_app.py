@@ -13,8 +13,6 @@ import sys
 import os
 import pickle
 import asyncio
-import qianfan
-import json
 
 # Ensure an event loop is available and set it as the current event loop
 loop = asyncio.get_event_loop_policy().new_event_loop()
