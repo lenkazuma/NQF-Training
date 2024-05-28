@@ -8,7 +8,6 @@ from langchain.chat_models import ChatOpenAI
 from langchain_core.prompts import PromptTemplate
 from langchain_community.document_loaders import PyPDFLoader,Docx2txtLoader,TextLoader
 from langchain.chains import RetrievalQA
-from pydub import AudioSegment
 import time
 import sys
 import os
