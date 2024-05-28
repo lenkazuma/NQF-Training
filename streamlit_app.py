@@ -1,13 +1,11 @@
 from dotenv import load_dotenv
 import streamlit as st
 from PyPDF2 import PdfReader
-from langchain.text_splitter import CharacterTextSplitter
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain.embeddings.openai import OpenAIEmbeddings
 from langchain.vectorstores import FAISS
 from langchain.chains.question_answering import load_qa_chain
 from langchain.chains.summarize import load_summarize_chain
-from langchain.chains.mapreduce import MapReduceChain
 from langchain.llms import OpenAI
 from langchain.callbacks import get_openai_callback
 import glob
@@ -82,7 +80,7 @@ def main():
 
 
             # show user input
-    user_question = st.text_input("以下是一个对提供的财务文件的问题, 请引用具体数字和说明，并尽可能的简短回答。:  ")      
+    user_question = st.text_input("User Question:  ")      
     if user_question:
         docs = knowledge_base.similarity_search(user_question)
         with st.spinner('Wait for it...'):
