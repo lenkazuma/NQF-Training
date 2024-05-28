@@ -4,7 +4,7 @@ import streamlit as st
 from langchain_community.vectorstores import Chroma
 from langchain_openai import OpenAIEmbeddings
 from langchain_openai import OpenAI
-from langchain_community.chat_models import ChatOpenAIsssssssssssssssssssssss
+from langchain_community.chat_models import ChatOpenAI
 from langchain_core.prompts import PromptTemplate
 from langchain_community.document_loaders import PyPDFLoader,Docx2txtLoader,TextLoader
 from langchain.chains import RetrievalQA
