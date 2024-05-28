@@ -3,6 +3,6 @@ langchain-community
 streamlit
 chromadb
 pysqlite3-binary
-qianfan
 pypdf
 uvicorn
+langchain_openai 
