@@ -105,8 +105,6 @@ def process_question(question):
     # Reset clicked_question to prevent it from affecting subsequent actions
     st.session_state.clicked_question = None
 
-
-
 # Main program
 if __name__ == "__main__":
     import os
@@ -143,7 +141,6 @@ if __name__ == "__main__":
     for question_key, question_text in questions.items():
         if st.button(question_text):
             handle_button_click(question_key)
-
 
     #st.write(st.session_state.data[0])
     if "chunks" not in st.session_state:
